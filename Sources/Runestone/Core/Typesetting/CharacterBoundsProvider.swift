@@ -2,7 +2,7 @@ import Combine
 import CoreText
 import Foundation
 
-public struct CharacterBoundsProvider {
+struct CharacterBoundsProvider {
     let stringView: CurrentValueSubject<StringView, Never>
     let lineManager: CurrentValueSubject<LineManager, Never>
     let lineControllerStorage: LineControllerStorage

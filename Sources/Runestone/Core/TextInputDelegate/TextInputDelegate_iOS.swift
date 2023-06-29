@@ -5,11 +5,6 @@ final class TextInputDelegate_iOS: TextInputDelegate {
     weak var inputDelegate: UITextInputDelegate?
 
     private unowned let textView: TextView
-    
-    public init(inputDelegate: UITextInputDelegate? = nil, textView: TextView) {
-        self.inputDelegate = inputDelegate
-        self.textView = textView
-    }
 
     func selectionWillChange() {
         inputDelegate?.selectionWillChange(textView)

@@ -2,7 +2,7 @@ import Combine
 import CoreText
 import Foundation
 
-public struct InsertionPointFrameFactory {
+struct InsertionPointFrameFactory {
     let stringView: CurrentValueSubject<StringView, Never>
     let lineManager: CurrentValueSubject<LineManager, Never>
     let characterBoundsProvider: CharacterBoundsProvider

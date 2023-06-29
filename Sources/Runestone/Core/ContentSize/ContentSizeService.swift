@@ -3,8 +3,8 @@ import CoreGraphics
 
 final class ContentSizeService {
     let contentSize = CurrentValueSubject<CGSize, Never>(.zero)
-    let horizontalOverscrollFactor = CurrentValueSubject<CGFloat, Never>(1)
-    let verticalOverscrollFactor = CurrentValueSubject<CGFloat, Never>(1)
+    let horizontalOverscrollFactor = CurrentValueSubject<CGFloat, Never>(0.05)
+    let verticalOverscrollFactor = CurrentValueSubject<CGFloat, Never>(0.05)
 
     private let _scrollView: CurrentValueSubject<WeakBox<MultiPlatformScrollView>, Never>
     private let totalLineHeightTracker: TotalLineHeightTracker

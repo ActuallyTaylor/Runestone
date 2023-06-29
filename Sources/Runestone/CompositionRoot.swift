@@ -278,7 +278,7 @@ final class CompositionRoot {
         contentSize: contentSizeService.contentSize,
         containerView: textView
     )
-    var insertionPointFramePublisherFactory: InsertionPointFramePublisherFactory {
+    private var insertionPointFramePublisherFactory: InsertionPointFramePublisherFactory {
         InsertionPointFramePublisherFactory(
             insertionPointFrameFactory: insertionPointFrameFactory,
             selectedRange: selectedRange.eraseToAnyPublisher(),
@@ -289,7 +289,7 @@ final class CompositionRoot {
             kern: typesetSettings.kern.eraseToAnyPublisher()
         )
     }
-    var insertionPointFrameFactory: InsertionPointFrameFactory {
+    private var insertionPointFrameFactory: InsertionPointFrameFactory {
         InsertionPointFrameFactory(
             stringView: stringView,
             lineManager: lineManager,
@@ -301,7 +301,7 @@ final class CompositionRoot {
             estimatedCharacterWidth: estimatedCharacterWidth.rawValue
         )
     }
-    var characterBoundsProvider: CharacterBoundsProvider {
+    private var characterBoundsProvider: CharacterBoundsProvider {
         CharacterBoundsProvider(
             stringView: stringView,
             lineManager: lineManager,
