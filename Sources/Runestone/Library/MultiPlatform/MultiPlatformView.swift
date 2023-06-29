@@ -20,7 +20,7 @@ extension NSView {
         layer
     }
 
-    var backgroundColor: NSColor? {
+    public var backgroundColor: NSColor? {
         get {
             if let backgroundColor = layer?.backgroundColor {
                 return NSColor(cgColor: backgroundColor)
