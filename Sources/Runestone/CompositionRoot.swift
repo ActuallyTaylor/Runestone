@@ -6,7 +6,7 @@ final class CompositionRoot {
     let scrollView = CurrentValueSubject<WeakBox<MultiPlatformScrollView>, Never>(WeakBox())
     private(set) lazy var textViewDelegate = ErasedTextViewDelegate(textView: textView)
     #if os(iOS)
-    private var textInputDelegate = TextInputDelegate_iOS()
+    private var textInputDelegate = TextInputDelegate_iOS(textView: textView)
     #else
     private var textInputDelegate = TextInputDelegate_Mac()
     #endif
@@ -107,6 +107,7 @@ final class CompositionRoot {
         selectedRange: selectedRange,
         markedRange: markedRange,
         textViewDelegate: textViewDelegate,
+        textView: textView,
         textEditor: textEditor,
         characterPairService: characterPairService,
         replacementTextPreparator: replacementTextPreparator,

@@ -6,6 +6,7 @@ struct TextReplacer {
     let selectedRange: CurrentValueSubject<NSRange, Never>
     let markedRange: CurrentValueSubject<NSRange?, Never>
     let textViewDelegate: ErasedTextViewDelegate
+    let textView: CurrentValueSubject<WeakBox<TextView>, Never>
     let textEditor: TextEditor
     let characterPairService: CharacterPairService
     let replacementTextPreparator: ReplacementTextPreparator
@@ -29,7 +30,7 @@ struct TextReplacer {
 private extension TextReplacer {
     private var skipInsertComponentCheck: Bool {
         #if os(iOS)
-        return textView.isRestoringPreviouslyDeletedText
+        return textView.value.value?.isRestoringPreviouslyDeletedText ?? false
         #else
         return false
         #endif
