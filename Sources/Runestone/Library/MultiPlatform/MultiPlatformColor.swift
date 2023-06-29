@@ -21,3 +21,11 @@ extension NSColor {
     }
 }
 #endif
+
+#if os(iOS)
+extension UIColor {
+    static var background: UIColor {
+        .systemBackground
+    }
+}
+#endif
